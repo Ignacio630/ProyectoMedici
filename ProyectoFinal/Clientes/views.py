@@ -5,8 +5,11 @@ from Clientes.forms import ClientsForm
 
 def create_client(request):
     if request.method == 'GET':
-        form = ClientsForm()
-        return render(request, 'create_client', context={'form': form})
+        
+        context = { 'form': ClientsForm() }
+        
+        
+        return render(request, 'Clientes/create_clients.html', context=context)
     
     elif request.method == 'POST':
         form = ClientsForm(request.POST)
@@ -21,10 +24,10 @@ def create_client(request):
                 'form': form,
                 'message': 'Cliente creado correctamente'
             }
-            return render(request, 'create_client', context=context)
+            return render(request, 'Clientes/create_clients.html', context=context)
         else:
             context = {
                 'form': form,
                 'message': 'Error al crear el cliente'
             }
-            return render(request, 'create_client', context=context)
+            return render(request, 'Clientes/create_clients.html', context=context)
