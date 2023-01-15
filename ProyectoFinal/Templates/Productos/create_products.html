@@ -1,16 +1,17 @@
 {% extends 'index.html' %}
 
 {% block title %}
-    Creacion de proveedores
+    Creacion de productos
 {% endblock %}
 
 
 {% block content %}
 
+
 <div class="container-fluid">
     <div class="row justify-content-center ">
         <div class="col-lg-4 border border-5 p-2">
-            <p class="fs-1 text-center">Crear nuevo proveedor</p>
+            <p class="fs-1 text-center">Crear nuevo producto </p>
             {% if form %}
                 <form action="" method="POST">
 
@@ -20,8 +21,8 @@
                         {{form.as_table}}
                     </table>
 
-                    <button type="submit" class="btn btn-dark">Crear proveedor</button>
-                </form>
+                    <button type="submit" class="btn btn-dark">Crear producto</button>
+                </form> 
             {% endif %}
         </div>
     </div>

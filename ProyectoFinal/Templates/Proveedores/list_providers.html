@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    listado de proveedores
+{% endblock %}
+
+{% block content %}
+
+<p class="fs-1 text-center">Lista de proveedores</p>      
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8 d-flex flex-row flex-wrap justify-content-evenly">
+                {% for provider in providers  %}
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Nombre: {{provider.name}}</li>
+                      <li class="list-group-item">Correo: {{provider.email}}</li>
+                      <li class="list-group-item">Telefono: {{provider.phone}}</li>
+                      <li class="list-group-item">Domicilio: {{provider.address}}</li>
+                    </ul>
+                  </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+
+
+{% endblock %}

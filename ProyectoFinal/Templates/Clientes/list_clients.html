@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    listado de Clientes
+{% endblock %}
+
+{% block content %}
+
+<p class="fs-1 text-center">Lista de Clientes</p>      
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8 d-flex flex-row flex-wrap justify-content-evenly">
+                {% for client in clients  %}
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Nombre: {{client.name}}</li>
+                      <li class="list-group-item">Correo: {{client.email}}</li>
+                      <li class="list-group-item">Telefono: {{client.phone}}</li>
+                      <li class="list-group-item">Domicilio: {{client.address}}</li>
+                    </ul>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

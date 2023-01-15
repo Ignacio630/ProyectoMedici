@@ -8,3 +8,5 @@ class Providers(models.Model):
     phone = models.IntegerField()
     email = models.EmailField()
     
+    def __str__(self):
+        return f'{self.name} - {self.address} - {self.phone} - {self.email}'

@@ -1,14 +1,10 @@
 from django.shortcuts import render
 from Clientes.models import Clients
 from Clientes.forms import ClientsForm
-# Create your views here.
 
 def create_client(request):
     if request.method == 'GET':
-        
         context = { 'form': ClientsForm() }
-        
-        
         return render(request, 'Clientes/create_clients.html', context=context)
     
     elif request.method == 'POST':
@@ -31,3 +27,16 @@ def create_client(request):
                 'message': 'Error al crear el cliente'
             }
             return render(request, 'Clientes/create_clients.html', context=context)
+        
+
+def list_clients(request):
+    if 'search' in request.GET:
+        search = request.GET['search']
+        clients = Clients.objects.filter(name__icontains=search)
+        clients = clients.order_by('name')
+    else:
+        clients = Clients.objects.all().order_by('name')
+    context = {
+        'clients': clients
+    }
+    return render(request, 'Clientes/list_clients.html', context=context)

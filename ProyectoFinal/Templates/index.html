@@ -13,7 +13,6 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,28 +26,31 @@
                         <a class="nav-link" href="/create-clients">Crear usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create-product">Crear productos</a>
+                        <a class="nav-link" href="/create-products">Crear productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/create-providers">Crear proveedores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create-providers">Listar usuarios</a>
+                        <a class="nav-link" href="/list-clients">Listar usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create-providers">Listar productos</a>
+                        <a class="nav-link" href="/list-products">Listar productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create-providers">Listar proveedores</a>
+                        <a class="nav-link" href="/list-providers">Listar proveedores</a>
                     </li>
                 </ul>
+                <form class="form-inline d-flex" method="GET">
+                    <input class="form-control mr-sm-2 pd-lf-10" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
-
+    
     {% block content %}
     {% endblock %}
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

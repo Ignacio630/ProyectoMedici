@@ -1,11 +1,31 @@
-{% extends 'index.html'%}
+{% extends 'index.html' %}
 
-{% load static %}
+{% block title %}
+    Creacion de Clientes
+{% endblock %}
 
-{% block title %}Crear proveedores{% endblock %}
 
 {% block content %}
 
-    <h1>Esto es la creacion de los clientes</h1>
+
+<div class="container-fluid">
+    <div class="row justify-content-center ">
+        <div class="col-lg-4 border border-5 p-2">
+            <p class="fs-1 text-center">Crear nuevo Cliente </p>
+            {% if form %}
+                <form action="" method="POST">
+
+                    {% csrf_token %}
+                    
+                    <table class="table">
+                        {{form.as_table}}
+                    </table>
+
+                    <button type="submit" class="btn btn-dark">Crear Cliente</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

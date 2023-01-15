@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    listado de Productos
+{% endblock %}
+
+{% block content %}
+
+<p class="fs-1 text-center">Lista de Productos</p>      
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8 d-flex flex-row flex-wrap justify-content-evenly">
+                {% for product in products  %}
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Nombre: {{product.name}}</li>
+                            <li class="list-group-item">Precio: {{product.price}}</li>
+                            <li class="list-group-item">Stock: {{product.stock}}</li>
+                            <li class="list-group-item">Categoria: {{product.category}}</li>
+                            <li class="list-group-item">Descripcion: {{product.description}}</li>
+                            {% if product.stock == False %}
+                                <li class="list-group-item">Estado: Sin Stock</li>
+                            {% else %}
+                                <li class="list-group-item">Estado: Con Stock</li>
+                            {% endif %}
+                        </ul>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
